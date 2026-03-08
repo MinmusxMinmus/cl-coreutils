@@ -1,0 +1,26 @@
+* cl-coreutils
+
+GNU Coreutils in Common Lisp.
+
+My objective with this is to read a bunch of coreutils C code, write a bunch of
+CL code, and maybe eventually turn it into a shell-like experience that mostly
+works.  Chasing full compatibility is explicitly not the goal, as there are a
+lot of edge cases and strange compatibility patches that would muddy the
+CL-writing experience very quickly.  Still, I will do a moderate effort in
+trying to have a functional library, and at least attempt to document most of
+the aspects in which it is not fully equivalent.
+
+** Changes
+
+- ~--help~ is translated to ~:help t~.
+
+- ~--version~ is translated to ~:version t~
+
+- Shorthands are removed in favor of the complete name versions.
+
+- Argument precedence is standardized as: ~:help~ > ~:version~ > everything
+  else.
+
+** Tasks
+
+Any pending tasks will go here as Org headings.
