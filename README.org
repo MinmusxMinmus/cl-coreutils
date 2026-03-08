@@ -22,3 +22,14 @@ the aspects in which it is not fully equivalent.
 ** Tasks
 
 Any pending tasks will go here as Org headings.
+
+*** < > Move ~basename~ edge cases to tests
+
+#+begin_src common-lisp
+  (cl-coreutils:basename "/////" "/")     ; "/"
+  (cl-coreutils:basename "/////" nil)     ; "/"
+  (cl-coreutils:basename "/home/test/" "/") ; "test"
+  (cl-coreutils:basename "/home/test/" nil) ; "test"
+  (cl-coreutils:basename "/home/test/" "test") ; "test"
+  (cl-coreutils:basename "/home/test" "test")  ; "test"
+#+end_src

@@ -5,10 +5,14 @@
                          (let ((keywords (list (rx symbol-start
                                                    (zero-or-one "asdf:")
                                                    "defsystem"
+                                                   symbol-end)
+                                               (rx symbol-start
+                                                   "defutil"
                                                    symbol-end))))
                            (font-lock-add-keywords nil (mapcar #'(lambda (kw)
                                                                    (unless (assoc kw font-lock-keywords)
                                                                      (cons kw 'font-lock-keyword-face)))
                                                                keywords)))
                          (put 'defpackage 'lisp-indent-function 1)
-                         (put 'asdf:defsystem 'lisp-indent-function 1))))))
+                         (put 'asdf:defsystem 'lisp-indent-function 1)
+                         (put 'defcmd 'common-lisp-indent-function 'defun))))))
