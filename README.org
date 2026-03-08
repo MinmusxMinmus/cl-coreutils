@@ -12,14 +12,12 @@ the aspects in which it is not fully equivalent.
 
 ** Changes
 
-- ~--help~ is translated to ~:help t~.
+- ~--help~ is translated to ~:help t~, and has precedence over any other
+  functionality.
 
-- ~--version~ is translated to ~:version t~
+- ~--version~ is removed.
 
 - Shorthands are removed in favor of the complete name versions.
-
-- Argument precedence is standardized as: ~:help~ > ~:version~ > everything
-  else.
 
 ** Tasks
 
